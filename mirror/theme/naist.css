@@ -1,0 +1,118 @@
+/*
+
+    Name:       Base16 Default Dark
+    Author:     Chris Kempson (http://chriskempson.com)
+
+    CodeMirror template by Jan T. Sott (https://github.com/idleberg/base16-codemirror)
+    Original Base16 color scheme by Chris Kempson (https://github.com/chriskempson/base16)
+
+*/
+.cm-s-naist.CodeMirror {
+  background: rgb(228, 231, 129);
+  color: purple;
+}
+
+/*背景と文字色*/
+.cm-s-naist div.CodeMirror-selected {
+  background: white;
+}
+
+/*選択時の背景*/
+.cm-s-naist .CodeMirror-line::selection, .cm-s-naist .CodeMirror-line>span::selection, .cm-s-naist .CodeMirror-line>span>span::selection {
+  background: rgba(48, 48, 48, .99);
+}
+
+.cm-s-naist .CodeMirror-line::-moz-selection, .cm-s-naist .CodeMirror-line>span::-moz-selection, .cm-s-naist .CodeMirror-line>span>span::-moz-selection {
+  background: rgba(48, 48, 48, .99);
+}
+
+.cm-s-naist .CodeMirror-gutters {
+  background: #151515;
+  border-right: 0px;
+}
+
+.cm-s-naist .CodeMirror-guttermarker {
+  color: #ac4142;
+}
+
+.cm-s-naist .CodeMirror-guttermarker-subtle {
+  color: #505050;
+}
+
+.cm-s-naist .CodeMirror-linenumber {
+  color: red;
+}
+
+.cm-s-naist .CodeMirror-cursor {
+  border-left: 1px solid #b0b0b0;
+}
+
+.cm-s-naist span.cm-comment {
+  color: orange;
+}
+
+/*コメント色*/
+.cm-s-naist span.cm-atom {
+  color: red;
+}
+
+.cm-s-naist span.cm-number {
+  color: red;
+}
+
+/*数字*/
+.cm-s-naist span.cm-property, .cm-s-naist span.cm-attribute {
+  color: #90a959;
+}
+
+.cm-s-naist span.cm-keyword {
+  color: blue;
+}
+
+/*予約語*/
+.cm-s-naist span.cm-string {
+  color: #0ae927;
+}
+
+/*括弧内の文字*/
+.cm-s-naist span.cm-variable {
+  color: rgb(0, 162, 242);
+}
+
+/*変数名*/
+.cm-s-naist span.cm-variable-2 {
+  color: #6a9fb5;
+}
+
+/*変数名2*/
+.cm-s-naist span.cm-def {
+  color: red;
+}
+
+/*mainとか*/
+.cm-s-naist span.cm-bracket {
+  color: #e0e0e0;
+}
+
+/*括弧*/
+.cm-s-naist span.cm-tag {
+  color: #ac4142;
+}
+
+.cm-s-naist span.cm-link {
+  color: #aa759f;
+}
+
+.cm-s-naist span.cm-error {
+  background: #ac4142;
+  color: #b0b0b0;
+}
+
+.cm-s-naist .CodeMirror-activeline-background {
+  background: #202020;
+}
+
+.cm-s-naist .CodeMirror-matchingbracket {
+  text-decoration: underline;
+  color: white !important;
+}
