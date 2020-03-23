@@ -1,0 +1,174 @@
+html, body {
+    overflow-x: hidden;
+    height: 100%;
+}
+body {
+    background: #fff;
+    padding: 0;
+    margin: 0;
+    font-family: arial;
+}
+.container {
+height:100%;
+width: 100%;
+background-color: #DDDDDD;
+}
+
+.practice-space {
+height: 85%;
+float: left;
+ width: 60%;
+}
+.top {
+height: 10%;
+font-size: 40px;
+}
+.header {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    box-shadow: none;
+    background-color: #202C33;
+    height: 60px!important;
+    overflow: hidden;
+    z-index: 10;
+    color:white;
+}
+.main {
+ width: 100%;
+ height:60%;
+ font-size: 15px;
+}
+
+
+.right-section {
+  float: left;
+  width: 20%;
+}
+
+.center-section {
+  height:90%;
+  width:90%;
+  margin: auto;
+  background-color: #202C33;
+}
+.left-section {
+  float: left;
+  width: 20%;
+  height:100%;
+}
+footer {
+  color: white;
+  height: 20%;
+}
+
+.header a{
+  float:right;
+  margin-right: 5%;
+  color:white;
+}
+
+@text: #111;
+@base: #f4f4f4;
+@link: #2a3644;
+@button: #f26964;
+@bottom: #ab4b47;
+
+.rounded (@radius: 6px) {
+-webkit-border-radius: @radius;
+   -moz-border-radius: @radius;
+    -ms-border-radius: @radius;
+     -o-border-radius: @radius;
+        border-radius: @radius;
+}
+
+.trans (@transition: .1s) {
+-webkit-transition: all @transition ease-in-out;
+   -moz-transition: all @transition ease-in-out;
+        transition: all @transition ease-in-out;
+
+}
+
+* {
+margin:0;
+padding:0;
+border:none;
+list-style:none;
+-webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+        box-sizing: border-box;
+}
+
+
+form {
+margin: auto;
+color: white;
+background:@link;
+width:100%;
+text-align:center;
+padding:40px;
+.rounded;
+}
+
+form > h1 {
+color:@base;
+text-shadow:1px 1px 0px rgba(0, 0, 0, 0.7);
+font-weight:400;
+margin-bottom:20px;
+}
+
+input {
+background:rgba(0, 0, 0, 0.2);
+color:#fff;
+text-shadow:1px 1px 0px rgba(0, 0, 0,0.3);
+display:block;
+width:40%;
+padding:15px;
+margin-left: auto;
+margin-right: auto;
+margin-bottom:10px;
+.rounded;
+.trans;
+outline:none;
+}
+
+input:focus {
+background:rgba(0, 0, 0, 0.1);
+.trans;
+}
+
+::-webkit-input-placeholder {
+ color: rgba(225, 225, 225, 0.4);
+}
+
+:-moz-placeholder {
+ color: rgba(225, 225, 225, 0.4);
+}
+
+::-moz-placeholder {
+ color: rgba(225, 225, 225, 0.4);
+}
+
+:-ms-input-placeholder {
+ color: rgba(225, 225, 225, 0.4);
+}
+
+button {
+position:relative;
+display:block;
+margin:auto;
+padding:17px;
+width:40%;
+.rounded;
+.trans;
+font-size:1.2em;
+background:@button;
+color:#202C33;
+box-shadow:0px 3px 0px @bottom;
+cursor:pointer;
+}
+
+button:active {
+top:3px;
+box-shadow:none;
+}
