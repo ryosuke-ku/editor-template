@@ -26,6 +26,13 @@
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/ind.css" type=text/css>
+  <link rel="stylesheet" href="mirror/lib/codemirror.css" type=text/css>
+
+  <!-- <link rel="stylesheet" href="css/sub.css" type=text/css> -->
+  <!-- <link rel="stylesheet" href="css/pra2.css" type=text/css> -->
+
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -56,100 +63,6 @@
         </div>
       </div>
     </form>
-
-    <!-- Right navbar links -->
-    <ul class="navbar-nav ml-auto">
-      <!-- Messages Dropdown Menu -->
-      <li class="nav-item dropdown">
-        <a class="nav-link" data-toggle="dropdown" href="#">
-          <i class="far fa-comments"></i>
-          <span class="badge badge-danger navbar-badge">3</span>
-        </a>
-        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <a href="#" class="dropdown-item">
-            <!-- Message Start -->
-            <div class="media">
-              <img src="dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
-              <div class="media-body">
-                <h3 class="dropdown-item-title">
-                  Brad Diesel
-                  <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
-                </h3>
-                <p class="text-sm">Call me whenever you can...</p>
-                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-              </div>
-            </div>
-            <!-- Message End -->
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <!-- Message Start -->
-            <div class="media">
-              <img src="dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
-              <div class="media-body">
-                <h3 class="dropdown-item-title">
-                  John Pierce
-                  <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
-                </h3>
-                <p class="text-sm">I got your message bro</p>
-                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-              </div>
-            </div>
-            <!-- Message End -->
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <!-- Message Start -->
-            <div class="media">
-              <img src="dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
-              <div class="media-body">
-                <h3 class="dropdown-item-title">
-                  Nora Silvester
-                  <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
-                </h3>
-                <p class="text-sm">The subject goes here</p>
-                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-              </div>
-            </div>
-            <!-- Message End -->
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
-        </div>
-      </li>
-      <!-- Notifications Dropdown Menu -->
-      <li class="nav-item dropdown">
-        <a class="nav-link" data-toggle="dropdown" href="#">
-          <i class="far fa-bell"></i>
-          <span class="badge badge-warning navbar-badge">15</span>
-        </a>
-        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <span class="dropdown-item dropdown-header">15 Notifications</span>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-envelope mr-2"></i> 4 new messages
-            <span class="float-right text-muted text-sm">3 mins</span>
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-users mr-2"></i> 8 friend requests
-            <span class="float-right text-muted text-sm">12 hours</span>
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-file mr-2"></i> 3 new reports
-            <span class="float-right text-muted text-sm">2 days</span>
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
-          <i class="fas fa-th-large"></i>
-        </a>
-      </li>
-    </ul>
   </nav>
   <!-- /.navbar -->
 
@@ -284,6 +197,16 @@
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
+      <li><a>質問</a></li>
+      <li><form id="queque" action="#">
+      <textarea id="question_msg" class="question_class" autocomplete="off"  placeholder="質問入力"></textarea>
+      <input type="submit" name="ask" value="送信" onclick="question_button()">
+      <input type="button" name="paste" value="コード貼り付け" onclick="goCom(3)">
+      <input type="button" name="ask" value="質問履歴" onclick="getQA()">
+      </form>
+      <div class="cp_qa" id="question" style="width:100%;height:300px;overflow:auto;">
+
+      </div></li>
     </div>
     <!-- /.sidebar -->
   </aside>
@@ -389,12 +312,115 @@
                       </button>
                     </div>
                   </div>
+
+                <!-- <div id="toi" class="left-section"></div> -->
+                    <div class="practice-space">
+                    <!-- <div class="center-title" id="tmp">code</div> -->
+                    <div class="center-section">
+                        <form id="message_form" name="code"  action="#">
+                        <div class="code-class">
+                            <textarea class="main-textlines" id="input_msg" autocomplete="off" name="message-body" placeholder="コードを入力">
+                                #include <stdio.h>
+                                int main(void) {
+                                printf("sum of two numbers\n");
+                                
+                                double d,e;
+                                scanf("%lf", &d);
+                                scanf("%lf", &e);
+                                printf("sum：%lf\n", d+e);
+                                
+                                return 0;
+                                }
+                                
+                                import matplotlib.pyplot as plt
+                                import numpy as np
+                                x = np.linspace(0, 10, 100)
+                                y = x + np.random.randn(100)
+                                plt.plot(x, y, label="test")
+                                plt.legend()
+                                plt.savefig('sample.png')
+                                
+                                import os
+                                path = os.getcwd()
+                                print(path)
+                                print(type(path))
+                                
+                                
+                                while 1:
+                                print(1)
+                                
+                            </textarea>
+                        </div>
+                    <div class="advice-class">
+                        <textarea class="advice-textlines" id="advice_msg" autocomplete="off" name="message-body" placeholder="コードを入力">
+                        </textarea>
+                    </div>
+                    <div id="barea-id">
+                    <input class="compile_button" type="submit"  value=">run" onclick="goCom(1)">
+                    <input class="submit_button" type="submit"  value="save" onclick="goCom(4)">
+                    <input class="submit_button" type="submit"  value="submit" onclick="submitCode(<%= userID%>)">
+                    <div id="save-id" class="save-class"></div><div id='filename' class='file'><%= userID%>/filename.c</div></div>
+                    <!-- <script>
+                    function goCom(num){
+                        if(num==1){
+                        $.cookie('code',editor.getValue())
+                        $('#stdout-id').empty()
+                        $('#stderr-id').empty()
+                        compiling(<%= userID %>)
+                    }
+                        else if(num==2){
+                        $('#testres').children().remove();
+                        testresult()
+                        }else if(num==3){
+                        document.getElementById('question_msg').value += '\n' +  editor.getValue()
+                    }
+                    else if(num==4){
+                        saveCode(<%= userID %>)
+                    }
+                    }
+                    
+                    function getTpl(filename){
+                        if (confirm("エディタのコードは消えます.submitかrunボタンで保存されます.\nよろしいですか")) {
+                            if(filename==undefined){
+                            alert("課題を選択してください");
+                            return
+                            }
+                            $.get(`template/${filename}.c`, function(text){
+                            editor.setValue(text)
+                            })
+                            } else {
+                            alert("キャンセルがクリックされました。");
+                            }
+                    }
+                    </script> -->
+                </form>
+                <!-- <script>　
+                      var editor = CodeMirror.fromTextArea(document.getElementById("input_msg"),{
+                        mode:"text/x-c",
+                        lineNumbers: true,
+                        theme: "default",
+                        lineWrapping: true,
+                        matchBrackets: true
+                      });
+                      var editor2 = CodeMirror.fromTextArea(document.getElementById("advice_msg"),{
+                        lineWrapping: true,
+                        lineNumbers: true,
+                      //  readOnly: true
+                      });
+                </script> -->
+                </form>
+                    </div>
+                </div>
+
+
+
+
                   <!-- /.card-header -->
                   <div class="card-body p-0">
                     <div class="d-md-flex">
                       <div class="p-1 flex-fill" style="overflow: hidden">
                         <!-- Map will be created here -->
-                        <div id="world-map-markers" style="height: 325px; overflow: hidden">
+                        <div id="world-map-markers" style="height: 400px; overflow: hidden">
                           <div class="map"></div>
                         </div>
                       </div>
