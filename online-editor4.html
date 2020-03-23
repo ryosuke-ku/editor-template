@@ -326,34 +326,34 @@
                         <form id="message_form" name="code"  action="#">
                         <div class="code-class">
                             <textarea class="main-textlines" id="input_msg" autocomplete="off" name="message-body" placeholder="コードを入力">
-                                #include <stdio.h>
-                                int main(void) {
-                                printf("sum of two numbers\n");
-                                
-                                double d,e;
-                                scanf("%lf", &d);
-                                scanf("%lf", &e);
-                                printf("sum：%lf\n", d+e);
-                                
-                                return 0;
-                                }
-                                
-                                import matplotlib.pyplot as plt
-                                import numpy as np
-                                x = np.linspace(0, 10, 100)
-                                y = x + np.random.randn(100)
-                                plt.plot(x, y, label="test")
-                                plt.legend()
-                                plt.savefig('sample.png')
-                                
-                                import os
-                                path = os.getcwd()
-                                print(path)
-                                print(type(path))
-                                
-                                
-                                while 1:
-                                print(1)
+        #include <stdio.h>
+            int main(void) {
+            printf("sum of two numbers\n");
+
+            double d,e;
+            scanf("%lf", &d);
+            scanf("%lf", &e);
+            printf("sum：%lf\n", d+e);
+
+            return 0;
+        }
+
+        import matplotlib.pyplot as plt
+        import numpy as np
+            x = np.linspace(0, 10, 100)
+            y = x + np.random.randn(100)
+            plt.plot(x, y, label="test")
+            plt.legend()
+            plt.savefig('sample.png')
+
+        import os
+            path = os.getcwd()
+            print(path)
+            print(type(path))
+
+
+            while 1:
+                print(1)
                                 
                             </textarea>
                         </div>
@@ -438,66 +438,74 @@
               <!-- /.col -->
     
               <div class="col-md-4">
-                <div class="info-box mb-3 bg-warning">
-                  <!-- <span class="info-box-icon"><i class="fas fa-tag"></i></span> -->
-    
+                <!-- <div class="info-box mb-3">    
                   <div class="info-box-content">
                     <span class="info-box-text">Input</span>
-                    <!-- <div  class="stdin-title">stdin</div> -->
-                    <!-- <span>
-                      <div id="stdin-id" class="stdin-contents">
-                      <textarea id="stdin_msg" class="stdin_class" autocomplete="off" name="message-body" placeholder="例) 4 9"></textarea>
-                      </div>
-                    </span> -->
                   </div>
-                  <textarea id="stdin_msg" class="stdin_class" autocomplete="off" name="message-body" placeholder="例) 4 9"></textarea>
+                  <textarea id="stdin_msg" class="stdin_class" autocomplete="off" name="message-body" placeholder="例) 4 9"></textarea>                 
+                </div> -->
+                <!-- /.info-box -->
+                <!-- <div class="info-box mb-3">    
+                  <div class="info-box-content">
+                    <span class="info-box-text">Output</span>
+                  </div>
+                </div> -->
 
-                  <!-- <div class="col-md-6">
-                    <div class="card">
+
+                <div class="col-md-15">
+                    <div class="card card-primary">
                       <div class="card-header">
-                        <h5 class="card-title">Teacher Lists</h5>
-    
+                        <h3 class="card-title">Input</h3>
+        
                         <div class="card-tools">
                           <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
                           </button>
-                          <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i>
+                        </div>
+                        <!-- /.card-tools -->
+                      </div>
+                      <!-- /.card-header -->
+                      <div class="card-body">
+                        <textarea id="stdin_msg" class="stdin_class" autocomplete="off" name="message-body" placeholder="例) Input value"></textarea>
+                    </div>
+                      <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                  </div>
+
+
+                <div class="col-md-15">
+                    <div class="card card-success">
+                      <div class="card-header">
+                        <h3 class="card-title">Output</h3>
+        
+                        <div class="card-tools">
+                          <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
                           </button>
                         </div>
+                        <!-- /.card-tools -->
                       </div>
-                      <div class="card-footer text-center">
-                        <a href="javascript::">View All Users</a>
-                      </div>
+                      <!-- /.card-header -->
+                      <div class="card-body">
+                        <textarea id="stdin_msg" class="stdin_class" autocomplete="off" name="message-body" placeholder="例) Output value"></textarea>
                     </div>
-                  </div> -->
-                 
-                </div>
-                <!-- /.info-box -->
-                <div class="info-box mb-3 bg-success">    
-                  <div class="info-box-content">
-                    <span class="info-box-text">Output</span>
-                    <!-- <div id="stdout-id" class="stdout-contents"></div> -->
+                      <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
                   </div>
-                </div>
-                <div class="info-box mb-3 bg-danger">
+
+
+                <!-- <div class="info-box mb-3">
     
                   <div class="info-box-content">
                     <span class="info-box-text">Error Message</span>
-                    <!-- <div id="stderr-id" class="stderr-contents"></div> -->
                   </div>
-                  <!-- /.info-box-content -->
-                </div>
+                </div> -->
                 <!-- /.info-box -->
-                <div class="info-box mb-3 bg-info">
-                  <!-- <span class="info-box-icon">
-                    <i class="far fa-comment"></i>
-                  </span> -->
-    
+                <!-- <div class="info-box mb-3">    
                   <div class="info-box-content">
                     <span class="info-box-text">Result</span>
-                    <!-- <span class="info-box-number">163,921</span> -->
                   </div>
-                  <!-- /.info-box-content -->
-                </div>
+                </div> -->
 
                                 <!-- /.card -->
                                 <div class="row">
